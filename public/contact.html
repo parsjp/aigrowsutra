@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Enroll — AIGrowSutra</title>
+  <meta name="description" content="Apply for an AIGrowSutra program: AI Training Foundations, AI Agent Building, Full-Stack Website Building, or the AI Expert Track." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/" aria-label="AIGrowSutra home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fbbf24"/>
+              <stop offset="0.55" stop-color="#f472b6"/>
+              <stop offset="1" stop-color="#2dd4bf"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 12l4.2 12.6L48.8 29l-12.6 4.4L32 46l-4.2-12.6L15.2 29l12.6-4.4L32 12z" fill="url(#lg)"/>
+          <circle cx="48" cy="16" r="4.5" fill="url(#lg)"/>
+          <circle cx="15" cy="44" r="3.5" fill="url(#lg)"/>
+          <circle cx="46" cy="47" r="2.5" fill="url(#lg)"/>
+        </svg>
+        <span class="brand-name">AIGrow<span class="accent">Sutra</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav">
+        <a href="/" data-nav="home">Home</a>
+        <a href="/courses" data-nav="courses">Programs</a>
+        <a href="/prompts" data-nav="prompts">Prompt Library</a>
+        <a href="/contact" data-nav="contact">Contact</a>
+        <a class="btn btn-primary btn-sm" href="/contact">Enroll Now</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Enroll / contact</span>
+        <h1>Let&rsquo;s start your <span class="grad-text">AI journey</span></h1>
+        <p class="lede">Tell us who you are and where you want to go — we reply within 24 hours with a learning plan and cohort dates.</p>
+      </div>
+    </div>
+
+    <section style="padding-top:56px;">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-form" id="form-wrap" data-reveal>
+            <form id="enroll-form" action="/api/leads" method="post" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="f-name">Full name <span>*</span></label>
+                  <input id="f-name" name="name" type="text" placeholder="Aarav Verma" maxlength="80" required />
+                  <small class="error" id="e-name">Please tell us your name.</small>
+                </div>
+                <div class="field">
+                  <label for="f-email">Email <span>*</span></label>
+                  <input id="f-email" name="email" type="email" placeholder="you@example.com" maxlength="160" required />
+                  <small class="error" id="e-email">Please enter a valid email address.</small>
+                </div>
+                <div class="field">
+                  <label for="f-phone">Phone / WhatsApp <span style="color:var(--muted)">(optional)</span></label>
+                  <input id="f-phone" name="phone" type="tel" placeholder="+91 90000 00000" maxlength="24" />
+                </div>
+                <div class="field">
+                  <label for="f-program">Program of interest</label>
+                  <select id="f-program" name="program">
+                    <option value="AI Training Foundations">AI Training Foundations</option>
+                    <option value="AI Agent Building">AI Agent Building</option>
+                    <option value="Full-Stack Website Building">Full-Stack Website Building</option>
+                    <option value="AI Expert Track">AI Expert Track (flagship)</option>
+                    <option value="Community (free)">Community tier — free</option>
+                    <option value="Not sure yet">Not sure yet — advise me</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="f-message">Your goal <span style="color:var(--muted)">(optional)</span></label>
+                  <textarea id="f-message" name="message" placeholder="e.g. I&rsquo;m a marketer who wants to automate reporting and eventually build agents for clients…" maxlength="2000"></textarea>
+                  <small class="form-note">Tell us your background and what you want to build — it helps us tailor the plan.</small>
+                </div>
+              </div>
+              <div class="form-status" id="form-status" role="alert"></div>
+              <button class="btn btn-primary btn-block" type="submit" id="submit-btn" style="margin-top:22px;">
+                Submit application
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="form-note" style="text-align:center;">By submitting you agree to hear from us about your application. No spam, ever.</p>
+            </form>
+          </div>
+
+          <aside class="contact-aside" data-reveal>
+            <div class="aside-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 016.5 2H19a1 1 0 011 1v18a1 1 0 01-1 1H6.5A2.5 2.5 0 014 19.5v-15z"/><path d="M19 16H6.5A2.5 2.5 0 004 18.5"/></svg>
+                What happens next
+              </h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>We review your application within 24 hours</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>A short call to map your goals to the right program</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>You get a personal learning plan + cohort dates</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Start shipping in week one</li>
+              </ul>
+            </div>
+            <div class="aside-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                Reach us directly
+              </h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><a href="mailto:hello@aigrowsutra.ai">hello@aigrowsutra.ai</a></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Replies within 24 hours, Mon–Sat</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Bengaluru, India · remote-first</li>
+              </ul>
+            </div>
+            <div class="aside-card">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2.5"/></svg>
+                Next cohort
+              </h3>
+              <p>Applications are reviewed on a rolling basis and cohorts fill fast — the next one starts in early December.</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="lgf" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fbbf24"/>
+                  <stop offset="0.55" stop-color="#f472b6"/>
+                  <stop offset="1" stop-color="#2dd4bf"/>
+                </linearGradient>
+              </defs>
+              <path d="M32 12l4.2 12.6L48.8 29l-12.6 4.4L32 46l-4.2-12.6L15.2 29l12.6-4.4L32 12z" fill="url(#lgf)"/>
+              <circle cx="48" cy="16" r="4.5" fill="url(#lgf)"/>
+              <circle cx="15" cy="44" r="3.5" fill="url(#lgf)"/>
+              <circle cx="46" cy="47" r="2.5" fill="url(#lgf)"/>
+            </svg>
+            <span class="brand-name">AIGrow<span class="accent">Sutra</span></span>
+          </a>
+          <p>Hands-on AI education for the agentic era. Learn AI, build agents, ship websites, and grow into an AI expert — one sutra at a time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="/courses#ai-training">AI Training Foundations</a></li>
+            <li><a href="/courses#agent-building">AI Agent Building</a></li>
+            <li><a href="/courses#website-building">Full-Stack Website Building</a></li>
+            <li><a href="/courses#ai-expert">AI Expert Track</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/prompts">Prompt Library</a></li>
+            <li><a href="/prompts?category=AI%20%26%20Agents">AI &amp; Agent Prompts</a></li>
+            <li><a href="/prompts?category=Career%20%26%20Interviews">Career Prompts</a></li>
+            <li><a href="/api/health">API Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:hello@aigrowsutra.ai">hello@aigrowsutra.ai</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Bengaluru, India · remote-first</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2.5"/></svg>
+              <span>Replies within 24 hours</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> AIGrowSutra. Learn freely, build boldly.</p>
+        <p>Prompt data from <a href="https://prompts.chat" target="_blank" rel="noopener">prompts.chat</a> · open source</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/contact.js"></script>
+</body>
+</html>

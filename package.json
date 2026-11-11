@@ -1,0 +1,20 @@
+{
+  "name": "aigrowsutra",
+  "version": "1.0.0",
+  "description": "AIGrowSutra — full-stack learning platform for AI training, agent building, website building, and the AI expert track. Prompt library powered by the open-source prompts.chat dataset.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed.js",
+    "refresh": "node scripts/refresh.js"
+  },
+  "engines": {
+    "node": ">=23.4.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "license": "MIT"
+}

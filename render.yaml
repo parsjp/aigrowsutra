@@ -1,0 +1,26 @@
+# Render.com deployment blueprint (free tier)
+# Docs: https://render.com/docs/infrastructure-as-code
+#
+# To use: push this repo to GitHub, then on https://dashboard.render.com
+# choose "New +" -> "Blueprint" and select the repo. Render will create the
+# web service on the free plan with a free aigrowsutra.onrender.com domain.
+#
+# For a persistent database, create a free Postgres at https://supabase.com
+# (or https://neon.tech) — during Blueprint creation Render will ask you for
+# DATABASE_URL: paste your Supabase session-pooler connection string there.
+# The app auto-creates its tables and seeds itself on first boot.
+
+services:
+  - type: web
+    name: aigrowsutra
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24.13.1"
+      - key: DATABASE_URL
+        sync: false   # Render will ask for this during Blueprint creation — paste the Supabase string

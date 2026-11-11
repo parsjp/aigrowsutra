@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Library — AIGrowSutra</title>
+  <meta name="description" content="Search thousands of free, battle-tested AI prompts — from AI agents and coding to marketing and design. Powered by the open-source prompts.chat dataset." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/" aria-label="AIGrowSutra home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fbbf24"/>
+              <stop offset="0.55" stop-color="#f472b6"/>
+              <stop offset="1" stop-color="#2dd4bf"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 12l4.2 12.6L48.8 29l-12.6 4.4L32 46l-4.2-12.6L15.2 29l12.6-4.4L32 12z" fill="url(#lg)"/>
+          <circle cx="48" cy="16" r="4.5" fill="url(#lg)"/>
+          <circle cx="15" cy="44" r="3.5" fill="url(#lg)"/>
+          <circle cx="46" cy="47" r="2.5" fill="url(#lg)"/>
+        </svg>
+        <span class="brand-name">AIGrow<span class="accent">Sutra</span></span>
+      </a>
+      <nav class="site-nav" id="site-nav">
+        <a href="/" data-nav="home">Home</a>
+        <a href="/courses" data-nav="courses">Programs</a>
+        <a href="/prompts" data-nav="prompts">Prompt Library</a>
+        <a href="/contact" data-nav="contact">Contact</a>
+        <a class="btn btn-primary btn-sm" href="/contact">Enroll Now</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Free forever</span>
+        <h1>The <span class="grad-text">Prompt Library</span></h1>
+        <p class="lede">
+          <b id="lib-count" style="color:var(--text)">Thousands</b> of battle-tested prompts from
+          <a href="https://prompts.chat" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;">prompts.chat</a>,
+          the world&rsquo;s largest open prompt platform. Search, filter, copy — no signup needed.
+        </p>
+      </div>
+    </div>
+
+    <section style="padding-top:52px;">
+      <div class="container">
+        <div class="library-controls" data-reveal>
+          <div class="library-search" id="lib-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="search" id="lib-q" placeholder="Search prompts — try “agent”, “sql”, “logo”, “interview”…" aria-label="Search prompts" autocomplete="off" />
+            <button class="clear-btn" id="lib-clear" aria-label="Clear search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <div class="filter-row">
+            <div class="type-chips" id="lib-types">
+              <button class="type-chip active" data-type="">All types</button>
+              <button class="type-chip" data-type="TEXT">Text</button>
+              <button class="type-chip" data-type="IMAGE">Image</button>
+              <button class="type-chip" data-type="VIDEO">Video</button>
+              <button class="type-chip" data-type="SKILL">Skills</button>
+            </div>
+            <select class="category-select" id="lib-category" aria-label="Filter by category">
+              <option value="">All categories</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="result-meta" id="lib-meta" aria-live="polite">Loading the library…</p>
+
+        <div class="prompts-grid" id="lib-grid"></div>
+
+        <div class="library-empty" id="lib-empty" hidden>
+          <h3>No prompts found</h3>
+          <p>Try a different keyword, or clear the filters.</p>
+        </div>
+
+        <div class="spinner" id="lib-spinner" hidden></div>
+
+        <div class="load-more-wrap">
+          <button class="btn btn-ghost" id="lib-more" hidden>Load more prompts</button>
+        </div>
+
+        <p style="text-align:center; color:var(--muted); font-size:.85rem; margin-top:44px;">
+          Dataset:
+          <a href="https://github.com/f/prompts.chat" target="_blank" rel="noopener" style="color:var(--teal);">github.com/f/prompts.chat</a>
+          (open source) · Re-import anytime with <code style="color:var(--amber);">npm run refresh</code>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="lgf" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fbbf24"/>
+                  <stop offset="0.55" stop-color="#f472b6"/>
+                  <stop offset="1" stop-color="#2dd4bf"/>
+                </linearGradient>
+              </defs>
+              <path d="M32 12l4.2 12.6L48.8 29l-12.6 4.4L32 46l-4.2-12.6L15.2 29l12.6-4.4L32 12z" fill="url(#lgf)"/>
+              <circle cx="48" cy="16" r="4.5" fill="url(#lgf)"/>
+              <circle cx="15" cy="44" r="3.5" fill="url(#lgf)"/>
+              <circle cx="46" cy="47" r="2.5" fill="url(#lgf)"/>
+            </svg>
+            <span class="brand-name">AIGrow<span class="accent">Sutra</span></span>
+          </a>
+          <p>Hands-on AI education for the agentic era. Learn AI, build agents, ship websites, and grow into an AI expert — one sutra at a time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="/courses#ai-training">AI Training Foundations</a></li>
+            <li><a href="/courses#agent-building">AI Agent Building</a></li>
+            <li><a href="/courses#website-building">Full-Stack Website Building</a></li>
+            <li><a href="/courses#ai-expert">AI Expert Track</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/prompts">Prompt Library</a></li>
+            <li><a href="/prompts?category=AI%20%26%20Agents">AI &amp; Agent Prompts</a></li>
+            <li><a href="/prompts?category=Career%20%26%20Interviews">Career Prompts</a></li>
+            <li><a href="/api/health">API Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:hello@aigrowsutra.ai">hello@aigrowsutra.ai</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Bengaluru, India · remote-first</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2.5"/></svg>
+              <span>Replies within 24 hours</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> AIGrowSutra. Learn freely, build boldly.</p>
+        <p>Prompt data from <a href="https://prompts.chat" target="_blank" rel="noopener">prompts.chat</a> · open source</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/prompts.js"></script>
+</body>
+</html>
